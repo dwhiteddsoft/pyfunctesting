@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "b8dc8f25-7e85-4e7e-bde2-3d621b696e9b"
+        },
+        "name": {
+            "value": "avidpythonfunctiontesting"
+        },
+        "location": {
+            "value": "South Central US"
+        },
+        "hostingEnvironment": {
+            "value": ""
+        },
+        "hostingPlanName": {
+            "value": "avidpythonfunctiontesting-appsvc"
+        },
+        "serverFarmResourceGroup": {
+            "value": "davwhite-dev"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "sku": {
+            "value": "PremiumV2"
+        },
+        "skuCode": {
+            "value": "P1v2"
+        },
+        "workerSize": {
+            "value": "3"
+        },
+        "workerSizeId": {
+            "value": "3"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "linuxFxVersion": {
+            "value": "DOCKER|davwhiteavid.azurecr.io/pythonfunctiontesting:v1.0.0"
+        },
+        "dockerRegistryUrl": {
+            "value": "https://davwhiteavid.azurecr.io"
+        },
+        "dockerRegistryUsername": {
+            "value": "davwhiteavid"
+        },
+        "dockerRegistryPassword": {
+            "value": null
+        },
+        "dockerRegistryStartupCommand": {
+            "value": ""
+        }
+    }
+}

@@ -1,0 +1,1 @@
+Make sure to change https://<yourwebsitename>.azurewebsites.net in the template.json file to your Azure Function site name
