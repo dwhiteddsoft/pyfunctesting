@@ -14,7 +14,7 @@ namespace serviceBusTestDriver
         static string ServiceBusConnectionString;
         static string QueueName;
         static IQueueClient queueClient;
-        static Stopwatch stopWatch = new Stopwatch();
+        static Stopwatch stopWatch;
 
         public static async Task Main(string[] args)
         {
@@ -35,7 +35,7 @@ namespace serviceBusTestDriver
             Console.WriteLine("======================================================");
             Console.WriteLine("Sending messages to queue...");
 
-            stopWatch.Start();
+            stopWatch = Stopwatch.StartNew();
             if (Int32.TryParse(sRead, out numberOfMessages))
                 // Send messages.
                 await SendMessagesAsync(numberOfMessages);
@@ -52,7 +52,8 @@ namespace serviceBusTestDriver
             } while (messagesInQueueCount > 0);
             stopWatch.Stop();
             Console.WriteLine("======================================================");
-            Console.WriteLine("Time to drain queue in seconds: " + stopWatch.Elapsed.Seconds);
+            Console.WriteLine("Ending process at {0}", DateTime.Now.ToShortTimeString());
+            Console.WriteLine("Time to drain queue in seconds: " + stopWatch.ElapsedMilliseconds / 1000);
             Console.WriteLine("======================================================");
             await queueClient.CloseAsync();
         }
