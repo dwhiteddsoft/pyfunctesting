@@ -1,0 +1,6 @@
+container v1.0.0 - async maian def, prefectCount 50, 32 maxConcurrentCalls
+container v1.1.0 - main def, prefectCount 50, 32 maxConcurrentCalls
+container v1.2.0 - async main def, prefectCount 50, 50 maxConcurrentCalls
+container v1.3.0 - main def, prefectCount 50, 50 maxConcurrentCalls
+container v1.4.0 - async main def, prefectCount 100, 100 maxConcurrentCalls
+container v1.5.0 - main def, prefectCount 100, 100 maxConcurrentCalls
