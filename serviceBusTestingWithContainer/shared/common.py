@@ -25,3 +25,13 @@ def resize_with_aspect_ratio(img, max_size=2800):
         (int(w * aspect_ratio), int(h * aspect_ratio))
     )
     return resized_img
+
+def time_convert(sec):
+  mins = sec // 60
+  sec = sec % 60
+  hours = mins // 60
+  mins = mins % 60
+  precision = 4
+  sec2 = "{:.{}f}".format( sec, precision )
+  return "Time Lapsed = {0}:{1}:{2}".format(int(hours),int(mins),sec2)
+

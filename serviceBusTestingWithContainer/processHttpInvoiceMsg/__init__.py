@@ -1,10 +1,15 @@
 import logging
 import json
+import time
+import asyncio
+import aiohttp
 import azure.functions as func
 from ..shared.mainProc import processMain 
+from ..shared.common import time_convert
 
 async def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
+    start_time = time.time()
 
     name = req.params.get('name')
     if not name:
@@ -16,7 +21,10 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
             name = req_body.get('name')
 
     if name:
-        processMain(req_body, logging)
+        await processMain(req_body, logging)
+        end_time = time.time()
+        time_lapsed = end_time - start_time
+        logging.info('Function completed in: ' + str(time_convert(time_lapsed)))
         return func.HttpResponse(
              "Success",
              status_code=200

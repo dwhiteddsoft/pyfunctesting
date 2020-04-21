@@ -3,3 +3,5 @@ pillow
 pdf2image
 pytesseract
 azure-storage-blob
+asyncio
+aiohttp
